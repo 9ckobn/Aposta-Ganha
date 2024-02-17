@@ -19,7 +19,7 @@ public class Footer : MonoBehaviour
         mainScreen = currentScreen;
 
 
-        back.onClick.AddListener(async () =>
+        back.onClick.AddListener(() =>
         {
             if (currentScreen is GameSelector)
             {
@@ -27,16 +27,21 @@ public class Footer : MonoBehaviour
             }
             else
             {
-                currentScreen = await currentScreen.GetNextScreen(mainScreen);
+                OpenScreen(mainScreen);
             }
         });
 
 
-        rules.onClick.AddListener(async () =>
+        rules.onClick.AddListener(() =>
         {
-            currentScreen = await currentScreen.GetNextScreen(rulesScreen);
+            OpenScreen(rulesScreen);
         });
 
-        settings.onClick.AddListener(async () => currentScreen = await currentScreen.GetNextScreen(settingsScreen));
+        settings.onClick.AddListener(() => OpenScreen(settingsScreen));
+    }
+
+    public async void OpenScreen(UIScreen next)
+    {
+        currentScreen = await currentScreen.GetNextScreen(next);
     }
 }

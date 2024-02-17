@@ -16,7 +16,7 @@ public struct GameDataKvp
     public Sprite ExtraSprite;
 }
 
-public enum GameType : Int16
+public enum GameType : Int32
 {
     basket =0,
     aero = 1,

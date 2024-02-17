@@ -26,7 +26,7 @@ public class Header : MonoBehaviour
     {
         openAbout.onClick.AddListener(() => Application.OpenURL(Constants.aboutUsUrl)); //todo rewrite to native webview
 
-        // openShop.onClick.AddListener(() => footer.OpenNextScreen(shopScreen));
+         openShop.onClick.AddListener(() => footer.OpenScreen(shopScreen));
 
         // throw new NotImplementedException();
     }

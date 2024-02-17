@@ -10,6 +10,8 @@ public class ShopScreen : UIScreen
 
     public override void StartScreen()
     {
+        gameObject.SetActive(true);
+
         SetupShop();
 
         // throw new System.NotImplementedException();
@@ -22,14 +24,14 @@ public class ShopScreen : UIScreen
 
         foreach (var item in data.allItems)
         {
-            if (!item.IsPurchased)
+            if (!item.IsPurchased())
             {
                 var currentItem = Instantiate(data.defaultPrefab, gridLayout);
 
                 // currentItem.buy.onClick.RemoveAllListeners();
-                // currentItem.buy.onClick.AddListener(()=> item.Buy());
 
-                currentItem.Image.sprite = item.Sprite;
+                currentItem.onClick = () => item.Buy();
+                currentItem.sprite = item.Sprite;
             }
         }
 

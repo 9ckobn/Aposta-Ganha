@@ -12,22 +12,17 @@ public class ShopContent : ScriptableObject
 [Serializable]
 public class Element
 {
-    public bool IsPurchased = false;
+    public bool IsPurchased() => PlayerPrefs.GetInt(Sprite.name, 0) == 1;
 
     public int Price;
 
     public Sprite Sprite;
 
-    public Element()
-    {
-        Debug.Log($"I am created with name {Sprite.name}");
-    }
-
     public void Buy()
     {
         if (PlayerStats.MoneyCount > Price)
         {
-            IsPurchased = true;
+            PlayerPrefs.SetInt(Sprite.name, 1);
             PlayerStats.MoneyCount -= Price;
         }
     }

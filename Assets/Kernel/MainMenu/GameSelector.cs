@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameSelector : UIScreen
 {
+    public MainMenuScreen mainMenuScreen;
     public DefaultScreen main, extra;
 
     #region main
@@ -23,14 +24,16 @@ public class GameSelector : UIScreen
     [SerializeField] private Button basketExtra, aeroExtra, footExtra;
 
     [SerializeField] private Image progress;
+
+    private int currentType;
+
+    public BasketScreen basketScreen;
     #endregion
 
-    public override async void StartScreen()
+    public override void StartScreen()
     {
-        Debug.Log($"trying to open me");
-
         main.StartScreen();
-        await extra.CloseScreenWithAnimation();
+        extra.CloseScreen();
 
         gameObject.SetActive(true);
 
@@ -74,7 +77,9 @@ public class GameSelector : UIScreen
 
         play.onClick.RemoveAllListeners();
 
-        switch ((int)type)
+        currentType = (int)type;
+
+        switch (currentType)
         {
             case 0:
                 await progress.rectTransform.DOAnchorPosX(-220, 0.3f).AsyncWaitForCompletion();
@@ -86,17 +91,22 @@ public class GameSelector : UIScreen
                 await progress.rectTransform.DOAnchorPosX(220, 0.3f).AsyncWaitForCompletion();
                 break;
         }
-        
+
+        play.onClick.RemoveAllListeners();
+        play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(basketScreen));
+
         Debug.Log($"done");
     }
 
     public IEnumerator OpenExtra(GameType type)
     {
-        yield return extraImage.DOFade(0, 0.15f).WaitForCompletion();
+        yield return extraImage.rectTransform.DOAnchorPosX((int)type > currentType ? -2500 : 2500, 0.15f).WaitForCompletion();
 
         extraImage.sprite = config.gameDataKvps.First(value => value.MyType == type).ExtraSprite;
 
-        switch ((int)type)
+        currentType = (int)type;
+
+        switch (currentType)
         {
             case 0:
                 progress.rectTransform.DOAnchorPosX(-220, 0.3f);
@@ -109,7 +119,7 @@ public class GameSelector : UIScreen
                 break;
         }
 
-        yield return extraImage.DOFade(1, 0.15f).WaitForCompletion();
+        yield return extraImage.rectTransform.DOAnchorPosX(0, 0.15f).WaitForCompletion();
 
 
         play.onClick.RemoveAllListeners();

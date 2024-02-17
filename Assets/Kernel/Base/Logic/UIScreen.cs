@@ -44,6 +44,9 @@ public abstract class UIScreen : MonoBehaviour
 
     public async UniTask CloseScreenWithAnimation()
     {
+        // if (allGraphicObjects.Length < 1 || additionalGraphicToFade.Length < 1 || animationType == AnimationType.None)
+        //     CloseScreen();
+
         foreach (var item in allGraphicObjects)
         {
             item.DOFade(0, fadeDuration);
