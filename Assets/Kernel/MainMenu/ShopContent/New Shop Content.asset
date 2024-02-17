@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f974bc07c88c04e927031425d5b842, type: 3}
+  m_Name: New Shop Content
+  m_EditorClassIdentifier: 
+  defaultPrefab: {fileID: 5952008960835638269, guid: d942d9808b7a0764dac8e267c8b18824, type: 3}
+  allItems:
+  - IsPurchased: 0
+    Price: 700
+    Sprite: {fileID: 21300000, guid: 3cf125403429866428aea990fef7dba6, type: 3}
+  - IsPurchased: 0
+    Price: 850
+    Sprite: {fileID: 21300000, guid: fdac15d1575b13c41b8cd5ec416bc5e7, type: 3}
+  - IsPurchased: 0
+    Price: 1100
+    Sprite: {fileID: 21300000, guid: b64fd6b805fbd5444ab0228ab72fbeb2, type: 3}
+  - IsPurchased: 0
+    Price: 2400
+    Sprite: {fileID: 21300000, guid: ae0b9d70666833a498e96bf761ab2bdb, type: 3}
+  - IsPurchased: 0
+    Price: 1200
+    Sprite: {fileID: 21300000, guid: 1bbd24249ff44834fb37c1d597b271fb, type: 3}
+  - IsPurchased: 0
+    Price: 550
+    Sprite: {fileID: 21300000, guid: 0a659434ad3b3d14d9aa75c9ab694fe1, type: 3}
+  - IsPurchased: 0
+    Price: 1050
+    Sprite: {fileID: 21300000, guid: af50559d2d33b6241a2a1cc6798643b8, type: 3}
+  - IsPurchased: 0
+    Price: 1100
+    Sprite: {fileID: 21300000, guid: 2c82ff50658294549a331f2f8cfcb7fd, type: 3}
+  - IsPurchased: 0
+    Price: 750
+    Sprite: {fileID: 21300000, guid: 30b5953bf18649545bbee27f3b18cc3c, type: 3}
+  - IsPurchased: 0
+    Price: 2200
+    Sprite: {fileID: 21300000, guid: ed876ecf127cb914f90331b50e1132ea, type: 3}
+  - IsPurchased: 0
+    Price: 700
+    Sprite: {fileID: 21300000, guid: 7d1a1fcf66956af4890ac6d0a0ba4345, type: 3}
+  - IsPurchased: 0
+    Price: 1100
+    Sprite: {fileID: 21300000, guid: 4d3eb07093c2e194ab56f2797dbf4c10, type: 3}
+  - IsPurchased: 0
+    Price: 5000
+    Sprite: {fileID: 21300000, guid: e8f30fcd91504a24aad4c2820ad358e4, type: 3}
+  - IsPurchased: 0
+    Price: 850
+    Sprite: {fileID: 21300000, guid: 55e3f2d1ed207034b85517d73cafe99e, type: 3}
+  - IsPurchased: 0
+    Price: 2400
+    Sprite: {fileID: 21300000, guid: f4f21f4ddee631f4ab487abb6c4f7378, type: 3}
