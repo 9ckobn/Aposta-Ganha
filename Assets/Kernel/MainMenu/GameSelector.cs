@@ -28,7 +28,7 @@ public class GameSelector : UIScreen
     private int currentType;
 
     public BasketScreen basketScreen;
-    public AeroScreen aeroScreen;
+    public Aero.AeroScreen aeroScreen;
     public FootballScreen footballScreen;
     #endregion
 

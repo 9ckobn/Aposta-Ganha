@@ -1,23 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AeroScreen : UIScreen
+namespace Aero
 {
-    public override void StartScreen()
+    public class AeroScreen : UIScreen
     {
-        Debug.Log($"aero");
-    }
+        [SerializeField] private MainMenuScreen mainMenu;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        [SerializeField] private Game.GameSelector gameSelector;
 
-    // Update is called once per frame
-    void Update()
-    {
+        [SerializeField] private Aero.GameHandler gameScreen;
+
+        [SerializeField] private Aero.Header header;
+
+        public override void StartScreen()
+        {
+            gameObject.SetActive(true);
+
+            
+            header.SetupHeader(this);
         
+        }
+
+        public UIScreen OpenChooseGame()
+        {
+            return gameSelector.SetupScreen();
+        }
+
+        public UIScreen BackToMainMenu()
+        {
+            CloseScreenWithAnimation();
+            gameScreen.CloseScreen();
+            return mainMenu;
+        }
     }
 }

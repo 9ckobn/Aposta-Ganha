@@ -16,8 +16,8 @@ namespace Basket
 
         [SerializeField] private PageSwiper pageSwiper;
 
-        [SerializeField] private List<Ball> allBalls;
-        private Ball currentBall;
+        [SerializeField] private List<Shop.Ball> allBalls;
+        private Shop.Ball currentBall;
 
         [SerializeField] private GameHandler game;
 
@@ -35,8 +35,6 @@ namespace Basket
 
         private void CheckIfBuyed(int currentIndex)
         {
-            Debug.Log($"go");
-
             if (currentIndex > 3)
             {
                 chooseText.text = cantChooseString;
@@ -61,10 +59,13 @@ namespace Basket
         }
     }
 
-    [Serializable]
-    public struct Ball
+    namespace Shop
     {
-        public Sprite Sprite;
-        public string myShopName;
+        [Serializable]
+        public struct Ball
+        {
+            public Sprite Sprite;
+            public string myShopName;
+        }
     }
 }

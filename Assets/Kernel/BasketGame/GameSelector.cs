@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Basket
+namespace Game
 {
     public class GameSelector : MonoBehaviour
     {

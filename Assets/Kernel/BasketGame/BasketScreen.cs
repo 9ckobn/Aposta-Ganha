@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Basket;
 
@@ -7,9 +5,9 @@ public class BasketScreen : UIScreen
 {
     [SerializeField] private MainMenuScreen mainMenu;
 
-    [SerializeField] private Basket.GameSelector gameSelector;
+    [SerializeField] private Game.GameSelector gameSelector;
 
-    [SerializeField] private GameHandler gameScreen;
+    [SerializeField] private Basket.GameHandler gameScreen;
 
     [SerializeField] private Basket.Header header;
 
@@ -33,6 +31,4 @@ public class BasketScreen : UIScreen
         gameScreen.CloseScreen();
         return mainMenu;
     }
-
-
 }
