@@ -84,7 +84,6 @@ public abstract class UIScreen : MonoBehaviour
 
         if (gameObject) gameObject.SetActive(false);
 
-
         return next;
     }
 
