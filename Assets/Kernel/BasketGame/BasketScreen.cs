@@ -4,26 +4,35 @@ using UnityEngine;
 using Basket;
 
 public class BasketScreen : UIScreen
-{   
+{
+    [SerializeField] private MainMenuScreen mainMenu;
+
     [SerializeField] private Basket.GameSelector gameSelector;
+
+    [SerializeField] private GameHandler gameScreen;
+
+    [SerializeField] private Basket.Header header;
 
     public override void StartScreen()
     {
         gameObject.SetActive(true);
 
-        gameSelector.Setup();
+        // gameSelector.SetupScreen();
+        header.SetupHeader(this);
         // throw new System.NotImplementedException();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public UIScreen OpenChooseGame()
     {
-        
+        return gameSelector.SetupScreen();
     }
 
-    // Update is called once per frame
-    void Update()
+    public UIScreen BackToMainMenu()
     {
-        
+        CloseScreenWithAnimation();
+        gameScreen.CloseScreen();
+        return mainMenu;
     }
+
+
 }

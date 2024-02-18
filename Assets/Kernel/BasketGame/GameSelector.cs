@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +10,19 @@ namespace Basket
 
         [SerializeField] private Button startButton;
 
-        public void Setup()
+        public UIScreen SetupScreen()
         {
             extra.CloseScreen();
             main.StartScreen();
 
-            startButton.onClick.AddListener(async () => await main.GetNextScreen(extra));
+            startButton.onClick.AddListener(OpenChooserAsync);
+
+            return main;
+        }
+
+        public async void OpenChooserAsync()
+        {
+            await main.GetNextScreen(extra);
         }
     }
 }

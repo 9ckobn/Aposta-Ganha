@@ -28,6 +28,8 @@ public class GameSelector : UIScreen
     private int currentType;
 
     public BasketScreen basketScreen;
+    public AeroScreen aeroScreen;
+    public FootballScreen footballScreen;
     #endregion
 
     public override void StartScreen()
@@ -82,47 +84,53 @@ public class GameSelector : UIScreen
         switch (currentType)
         {
             case 0:
+                play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(basketScreen));
                 await progress.rectTransform.DOAnchorPosX(-220, 0.3f).AsyncWaitForCompletion();
                 break;
             case 1:
+                play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(aeroScreen));
                 await progress.rectTransform.DOAnchorPosX(0, 0.3f).AsyncWaitForCompletion();
                 break;
             case 2:
+                play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(footballScreen));
                 await progress.rectTransform.DOAnchorPosX(220, 0.3f).AsyncWaitForCompletion();
                 break;
         }
 
-        play.onClick.RemoveAllListeners();
-        play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(basketScreen));
 
         Debug.Log($"done");
     }
 
     public IEnumerator OpenExtra(GameType type)
     {
-        yield return extraImage.rectTransform.DOAnchorPosX((int)type > currentType ? -2500 : 2500, 0.15f).WaitForCompletion();
+        yield return extraImage.rectTransform.DOAnchorPosX((int)type > currentType ? 2500 : -2500, 0.15f).WaitForCompletion();
 
         extraImage.sprite = config.gameDataKvps.First(value => value.MyType == type).ExtraSprite;
+
+        play.onClick.RemoveAllListeners();
 
         currentType = (int)type;
 
         switch (currentType)
         {
             case 0:
-                progress.rectTransform.DOAnchorPosX(-220, 0.3f);
+                play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(basketScreen));
+                yield return progress.rectTransform.DOAnchorPosX(-220, 0.3f).WaitForCompletion();
                 break;
             case 1:
-                progress.rectTransform.DOAnchorPosX(0, 0.3f);
+                play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(aeroScreen));
+                yield return progress.rectTransform.DOAnchorPosX(0, 0.3f).WaitForCompletion();
                 break;
             case 2:
-                progress.rectTransform.DOAnchorPosX(220, 0.3f);
+                play.onClick.AddListener(async () => await mainMenuScreen.GetNextScreen(footballScreen));
+                yield return progress.rectTransform.DOAnchorPosX(220, 0.3f).WaitForCompletion();
                 break;
         }
 
         yield return extraImage.rectTransform.DOAnchorPosX(0, 0.15f).WaitForCompletion();
 
 
-        play.onClick.RemoveAllListeners();
+        // play.onClick.RemoveAllListeners();
 
         Debug.Log($"done");
     }

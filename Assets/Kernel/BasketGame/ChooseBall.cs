@@ -19,7 +19,7 @@ namespace Basket
         [SerializeField] private List<Ball> allBalls;
         private Ball currentBall;
 
-        [SerializeField] private UIScreen game;
+        [SerializeField] private GameHandler game;
 
         public override void StartScreen()
         {
