@@ -4425,6 +4425,10 @@ MonoBehaviour:
   needToAnimate: 1
   overrideBaseColor: 0
   myButton: {fileID: 244804195}
+  sound: {fileID: 806456542}
+  music: {fileID: 444856009}
+  defaultS: {fileID: 21300000, guid: 0b9a2e789223eb740818f18daedde009, type: 3}
+  selectedS: {fileID: 21300000, guid: 87794e43020ae1f46a7ed40baebc92e8, type: 3}
 --- !u!1 &312515369
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,6 +6482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444856008}
+  - component: {fileID: 444856009}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -6507,6 +6512,50 @@ RectTransform:
   m_AnchoredPosition: {x: 567.4142, y: -511.14874}
   m_SizeDelta: {x: 926.147, y: 258.0574}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &444856009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444856007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1447608532}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &455947180
 GameObject:
   m_ObjectHideFlags: 0
@@ -10819,7 +10868,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d079463684af2224eabaf0e384564710, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -2320571678947585996, guid: d079463684af2224eabaf0e384564710, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10882,7 +10931,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &791372884
@@ -10980,6 +11029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 806456541}
+  - component: {fileID: 806456542}
   m_Layer: 5
   m_Name: Sound
   m_TagString: Untagged
@@ -11009,6 +11059,50 @@ RectTransform:
   m_AnchoredPosition: {x: 567.4142, y: -170.38292}
   m_SizeDelta: {x: 926.147, y: 258.0574}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &806456542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806456540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2071039319}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &812256582
 GameObject:
   m_ObjectHideFlags: 0
@@ -16507,8 +16601,8 @@ MonoBehaviour:
   fadeDuration: 0.3
   needToAnimate: 1
   overrideBaseColor: 1
-  WaitTime: 3
-  NoiseForLoading: 10
+  WaitTime: 1
+  NoiseForLoading: 1
   progressBar: {fileID: 1462673659}
   loader: {fileID: 1621920899}
   logo: {fileID: 1071658945}

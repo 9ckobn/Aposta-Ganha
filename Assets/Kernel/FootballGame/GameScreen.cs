@@ -29,8 +29,12 @@ public class GameScreen : UIScreen
         retry.onClick.RemoveAllListeners();
         retry.onClick.AddListener(() =>
         {
+            gameHandler.gameObject.SetActive(true);
+            Debug.Log("try to close wingame screen");
+            winGame.SetActive(false);
             PlayerStats.MoneyCount += gameHandler.myScore * 50;
             gameHandler.ClearGame(true);
+            gameHandler.StartGame();
         });
         // throw new System.NotImplementedException();
     }

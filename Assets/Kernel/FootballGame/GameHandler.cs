@@ -29,25 +29,41 @@ namespace Foot
 
         public int myScore, enemyScore;
 
-        private int totalTime = 150;
+        private int totalTime = 30;
 
         private bool clear = false;
         public Action<int> onEnd;
 
+        IEnumerator timerRoutine;
+
         public void StartGame()
         {
+
+
+            // if (TimerRoutine().)
+
             ClearGame(false);
 
-            gameObject.SetActive(true);
+            if (timerRoutine == null)
+            {
+                timerRoutine = TimerRoutine();
 
-            StartCoroutine(TimerRoutine());
+            StartCoroutine(timerRoutine);
+            }
+
+            // gameObject.SetActive(true);
 
             cam = Camera.main;
+            
+
+    if (path != null)
+    {
 
 		foreach (var item in path)
 {
 item.collider.enabled = true;
 }
+    }
 
             path = new List<Dot>();
             path.Add(lastDot);
@@ -74,12 +90,13 @@ item.collider.enabled = true;
         private IEnumerator TimerRoutine()
         {
             YieldInstruction waitSec = new WaitForSeconds(1);
+            totalTime = 30;
 
             while (totalTime > 0)
             {
                 yield return waitSec;
 
-                totalTime--;
+                totalTime -= 1;
 
                 timer.text = TimeSpan.FromSeconds(totalTime).ToString(@"mm\:ss");
             }
@@ -107,10 +124,14 @@ item.collider.enabled = true;
             if (!needToClearData)
                 return;
 
+            timerRoutine = null;
+
             DOTween.KillAll();
 
             myScore = 0;
             enemyScore = 0;
+
+            score.text = "0-0";
 
             StopAllCoroutines();
         }
@@ -171,6 +192,7 @@ item.collider.enabled = true;
                             Debug.Log($"lose");
                         }
 
+                            dot.collider.enabled = true;
                         score.text = $"{myScore}-{enemyScore}";
 
 
