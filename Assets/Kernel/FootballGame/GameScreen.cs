@@ -19,9 +19,10 @@ public class GameScreen : UIScreen
         gameHandler.ClearGame(true);
         gameHandler.StartGame();
 
-        gameHandler.onEnd = () =>
+        gameHandler.onEnd = (value) =>
         {
-            total.text = $"total win \n{gameHandler.myScore}";
+            total.text = $"total win \n{value*50}";
+            gameHandler.gameObject.SetActive(false);
             winGame.SetActive(true);
         };
 

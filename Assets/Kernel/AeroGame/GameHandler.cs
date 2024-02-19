@@ -34,7 +34,7 @@ namespace Aero
 
         void StartGame()
         {
-            var direction = new Vector2(2.5f, 0);
+            var direction = new Vector2(5f, 0);
 
             _wing.onOil = () =>
             {

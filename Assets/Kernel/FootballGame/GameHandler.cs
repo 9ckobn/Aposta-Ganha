@@ -32,7 +32,7 @@ namespace Foot
         private int totalTime = 150;
 
         private bool clear = false;
-        public Action onEnd;
+        public Action<int> onEnd;
 
         public void StartGame()
         {
@@ -43,6 +43,11 @@ namespace Foot
             StartCoroutine(TimerRoutine());
 
             cam = Camera.main;
+
+		foreach (var item in path)
+{
+item.collider.enabled = true;
+}
 
             path = new List<Dot>();
             path.Add(lastDot);
@@ -79,7 +84,7 @@ namespace Foot
                 timer.text = TimeSpan.FromSeconds(totalTime).ToString(@"mm\:ss");
             }
 
-            onEnd?.Invoke();
+            onEnd?.Invoke(myScore);
 
             Debug.Log($"endgame");
         }
@@ -87,6 +92,7 @@ namespace Foot
         public void ClearGame(bool needToClearData)
         {
             // Ball.transform.DOKill();
+            gameObject.SetActive(true);
             Ball.transform.localPosition = initialPosition;
             Ball.SetActive(true);
 
