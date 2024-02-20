@@ -25,12 +25,13 @@ public class FootballScreen : UIScreen
 
     public UIScreen OpenGame()
     {
-        gameScreen.StartScreen();
+        gameSelector.SetupScreen();
         return gameScreen;
     }
 
     public UIScreen BackToMainMenu()
     {
+        gameScreen.CloseScreen();
         handler.ClearGame(true);
 
         handler.gameObject.SetActive(false);

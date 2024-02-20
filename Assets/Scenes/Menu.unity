@@ -1804,9 +1804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482381ed8925cef4e88284c81a8fe048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationType: 0
+  animationType: 1
   fadeDuration: 0.3
-  needToAnimate: 1
+  needToAnimate: 0
   overrideBaseColor: 0
   header: {fileID: 937910061}
   mainMenu: {fileID: 115616864}
@@ -2406,11 +2406,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The essence of the game is that on the field in a random place appears
-    a basketball hoop and you need to click on it as quickly as possible to throw
-    the ball into the ring, the more times you click for 30 seconds. For each game
-    the number of thrown balls is counted and summed up. Then you can exchange these
-    points for a new skin of the ball.
+  m_text: We fly on a plane and collect fuel, flying around obstacles. The goal is
+    to fly as much distance as possible
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -14510,6 +14507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 2027693769}
   extra: {fileID: 728793506}
+  handler: {fileID: 0}
   startButton: {fileID: 21909770}
 --- !u!1 &1035150678
 GameObject:
@@ -17116,11 +17114,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The essence of the game is that on the field in a random place appears
-    a basketball hoop and you need to click on it as quickly as possible to throw
-    the ball into the ring, the more times you click for 30 seconds. For each game
-    the number of thrown balls is counted and summed up. Then you can exchange these
-    points for a new skin of the ball.
+  m_text: Connect the blue players to form a pattern. So that the ball can pass through
+    the opponents. Come up with the best strategy and score goals.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -19078,6 +19073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 2099728058}
   extra: {fileID: 614024839}
+  handler: {fileID: 2087894943}
   startButton: {fileID: 1790089660}
 --- !u!1 &1310666640
 GameObject:
@@ -26899,6 +26895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 1663457591}
   extra: {fileID: 55328726}
+  handler: {fileID: 0}
   startButton: {fileID: 272653231}
 --- !u!1 &1900001164
 GameObject:
