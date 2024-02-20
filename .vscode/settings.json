@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Aposta-Ganha.sln"
+    "dotnet.defaultSolution": "Aposta Ganha.sln"
 }
