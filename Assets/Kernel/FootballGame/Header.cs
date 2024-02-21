@@ -12,10 +12,14 @@ namespace Foot
         [SerializeField] private UIScreen rulesScreen;
         [SerializeField] private TextMeshProUGUI moneyCount;
 
+
+
         private UIScreen currentScreen;
 
         public void SetupHeader(FootballScreen aero)
         {
+            rules.gameObject.SetActive(true);
+
             moneyCount.text = $"{PlayerStats.MoneyCount}";
 
             PlayerStats.onMoneyCountChanged += (value) => this.moneyCount.text = $"{value}";
@@ -31,7 +35,7 @@ namespace Foot
 
             back.onClick.AddListener(async () =>
             {
-                currentScreen = await currentScreen.GetNextScreen(currentScreen is RulesScreen ? aero.OpenGame() : aero.BackToMainMenu());
+                currentScreen = await currentScreen.GetNextScreen(currentScreen is RulesScreen ? aero.OpenSelect() : aero.BackToMainMenu());
             });
         }
     }

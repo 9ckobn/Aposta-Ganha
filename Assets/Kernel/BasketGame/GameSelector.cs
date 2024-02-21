@@ -14,11 +14,19 @@ namespace Game
 
         public UIScreen SetupScreen()
         {
-            handler.ClearGame(true);
-            handler.gameObject.SetActive(false);
+            gameObject.SetActive(true);
+
+            if (handler)
+            {
+                // handler.ClearGame(true);
+                handler.gameObject.SetActive(false);
+                Debug.Log($"Hello");
+            }
+
             extra.CloseScreen();
             main.StartScreen();
 
+            startButton.onClick.RemoveAllListeners();
             startButton.onClick.AddListener(OpenChooserAsync);
 
             return main;

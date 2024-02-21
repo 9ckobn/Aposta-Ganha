@@ -5,6 +5,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Foot
 {
@@ -15,6 +16,8 @@ namespace Foot
 
         [SerializeField] private List<GameObject> variants;
         [SerializeField] private TextMeshProUGUI score, timer;
+
+        [SerializeField] private Button rulesButton;
 
         private List<Dot> path;
 
@@ -38,9 +41,9 @@ namespace Foot
 
         public void StartGame()
         {
-
-
             // if (TimerRoutine().)
+
+            rulesButton.gameObject.SetActive(false);
 
             ClearGame(false);
 
@@ -48,22 +51,22 @@ namespace Foot
             {
                 timerRoutine = TimerRoutine();
 
-            StartCoroutine(timerRoutine);
+                StartCoroutine(timerRoutine);
             }
 
             // gameObject.SetActive(true);
 
             cam = Camera.main;
-            
 
-    if (path != null)
-    {
 
-		foreach (var item in path)
-{
-item.collider.enabled = true;
-}
-    }
+            if (path != null)
+            {
+
+                foreach (var item in path)
+                {
+                    item.collider.enabled = true;
+                }
+            }
 
             path = new List<Dot>();
             path.Add(lastDot);
@@ -136,6 +139,33 @@ item.collider.enabled = true;
             StopAllCoroutines();
         }
 
+         public void ClearGame()
+        {
+            Ball.transform.localPosition = initialPosition;
+            Ball.SetActive(true);
+
+            foreach (var item in variants)
+            {
+                item.SetActive(false);
+            }
+
+            inputLine.positionCount = 1;
+            inGameLine.positionCount = 1;
+
+            timerRoutine = null;
+
+            DOTween.KillAll();
+
+            myScore = 0;
+            enemyScore = 0;
+
+            score.text = "0-0";
+
+            StopAllCoroutines();
+
+            gameObject.SetActive(false);
+        }
+
         public void OnBeginDrag(PointerEventData eventData)
         {
             inputLine.enabled = true;
@@ -192,7 +222,7 @@ item.collider.enabled = true;
                             Debug.Log($"lose");
                         }
 
-                            dot.collider.enabled = true;
+                        dot.collider.enabled = true;
                         score.text = $"{myScore}-{enemyScore}";
 
 
