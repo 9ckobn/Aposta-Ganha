@@ -9,6 +9,8 @@ public class FootballScreen : UIScreen
     [SerializeField] private Game.GameSelector gameSelector;
     [SerializeField] private GameHandler handler;
 
+    public GameObject winOpen;
+
     public override void StartScreen()
     {
         gameObject.SetActive(true);
@@ -34,6 +36,8 @@ public class FootballScreen : UIScreen
     {
         gameScreen.CloseScreen();
         gameSelector.gameObject.SetActive(false);
+
+        
 
 
         CloseScreen();

@@ -39,6 +39,7 @@ public abstract class UIScreen : MonoBehaviour
 
     public virtual void CloseScreen()
     {
+        onClosing?.Invoke();
         gameObject.SetActive(false);
     }
 

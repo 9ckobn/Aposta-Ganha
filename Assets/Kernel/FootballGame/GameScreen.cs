@@ -13,6 +13,8 @@ public class GameScreen : UIScreen
     [SerializeField] private TextMeshProUGUI total;
     public override void StartScreen()
     {
+        onClosing = () => winGame.SetActive(false);
+
         winGame.SetActive(false);
 
         gameObject.SetActive(true);
@@ -21,9 +23,10 @@ public class GameScreen : UIScreen
 
         gameHandler.onEnd = (value) =>
         {
-            total.text = $"total win \n{value*50}";
+            total.text = $"total win \n{value * 50}";
             gameHandler.gameObject.SetActive(false);
             winGame.SetActive(true);
+            gameHandler.ClearGame();
         };
 
         retry.onClick.RemoveAllListeners();
